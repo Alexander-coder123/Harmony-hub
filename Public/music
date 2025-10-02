@@ -1,3 +1,100 @@
-Here is the link to download it:
-Goon%20Flavour%20x%20Master%20KG%20x%20Eemoh%20-%20Ngishutheni%20.mp3
-https://dl.yingaboy.com/uploads/Goon%20Flavour%20x%20Master%20KG%20x%20Eemoh%20-%20Ngishutheni%20.mp3?_=1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HarmonyHub — Music by Maths Champ</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0a0f1d, #111827);
+    color: #e6eef6;
+    text-align: center;
+  }
+  header {
+    padding: 20px;
+    background: #0b1220;
+  }
+  .btn {
+    padding: 10px 16px;
+    background: linear-gradient(90deg, #f97316, #06b6d4);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  main {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #0b1220;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  audio {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .playlist div {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 4px 0;
+    background: rgba(255,255,255,0.05);
+  }
+  .playlist div:hover {
+    background: rgba(255,255,255,0.1);
+  }
+  footer {
+    padding: 20px;
+    color: #9aa4b2;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎵 HarmonyHub</h1>
+  <p>Your harmony, your vibe, your hub.</p>
+  <!-- Replace with your Gumroad product link -->
+  <a class="btn" href="https://gumroad.com/l/your-song" target="_blank">Download Music</a>
+</header>
+
+<main>
+  <h2>Now Playing</h2>
+  <p id="trackTitle">Wendy Shay — Too Late</p>
+  <audio id="audio" controls>
+    <source src="https://cdn.trendybeatz.com/audio/Wendy-Shay-Too-Late-(TrendyBeatz.com).mp3" type="audio/mpeg">
+  </audio>
+
+  <h3>Playlist</h3>
+  <div class="playlist" id="playlist">
+    <div data-src="https://cdn.trendybeatz.com/audio/Wendy-Shay-Too-Late-(TrendyBeatz.com).mp3">
+      Wendy Shay — Too Late
+    </div>
+  </div>
+</main>
+
+<footer>
+  HarmonyHub © 2025 — Created by Maths Champ
+</footer>
+
+<script>
+  const audio = document.getElementById("audio");
+  const trackTitle = document.getElementById("trackTitle");
+  const playlist = document.getElementById("playlist");
+
+  playlist.querySelectorAll('div').forEach((trackDiv) => {
+    trackDiv.addEventListener('click', () => {
+      const src = trackDiv.getAttribute('data-src');
+      audio.src = src;
+      trackTitle.textContent = trackDiv.textContent;
+      audio.play();
+    });
+  });
+</script>
+
+</body>
+</html>
