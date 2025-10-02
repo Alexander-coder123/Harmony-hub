@@ -1,0 +1,12 @@
+{
+  "name": "harmonyhub",
+  "version": "1.0.0",
+  "description": "Music streaming and download site by Maths Champ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
