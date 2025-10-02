@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HarmonyHub — Music by Maths Champ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #0a0f1d, #111827);
+      color: #e6eef6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: #0b1220;
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .btn {
+      padding: 10px 16px;
+      background: linear-gradient(90deg, #f97316, #06b6d4);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .player {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #0b1220;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    audio {
+      width: 100%;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #9aa4b2;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>🎵 HarmonyHub</h1>
+      <p>Your harmony, your vibe, your hub.</p>
+    </div>
+    <a class="btn" href="https://gumroad.com/l/your-song" target="_blank">Download Music</a>
+  </header>
+
+  <div class="player">
+    <h2>Now Playing</h2>
+    <p id="trackTitle">Sample Track 1 — SoundHelix</p>
+    <audio id="audio" controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <footer>
+    HarmonyHub © 2025 — Created by Maths Champ
+  </footer>
+
+  <script>
+    // Simple playlist (add your own tracks here)
+    const tracks = [
+      { title: "Sample Track 1 — SoundHelix", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+      { title: "Sample Track 2 — SoundHelix", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" }
+    ];
+
+    const audio = document.getElementById("audio");
+    const trackTitle = document.getElementById("trackTitle");
+    let current = 0;
+
+    audio.addEventListener("ended", () => {
+      current = (current + 1) % tracks.length;
+      audio.src = tracks[current].url;
+      trackTitle.textContent = tracks[current].title;
+      audio.play();
+    });
+  </script>
+</body>
+</html>
