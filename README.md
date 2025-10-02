@@ -52,17 +52,3 @@ app.get("/music.zip", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
-{
-  "name": "harmonyhub",
-  "version": "1.0.0",
-  "description": "Music website with Stripe payment and downloads",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "stripe": "^13.0.0",
-    "body-parser": "^1.20.2"
-  }
-}
